@@ -1,1 +1,18 @@
-{{ content }}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+	<head>
+		<link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+	</head>
+
+	<body>
+		<nav>
+			{% for page in site.pages %}
+				{{ page }}
+			{% endfor %}
+		</nav>
+		<main>
+			{{ content }}
+		</main>
+	</body>
+</html>
