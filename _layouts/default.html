@@ -7,8 +7,10 @@
 
 	<body>
 		<nav>
-			{% for page in site.pages %}
-				{{ page }}
+			<div id="name">Jeremy Sparagon</div>
+			{%- assign pages_rev = site.pages | reverse -%}
+			{% for page in pages_rev %}
+				{% if page.title %}<a href="{{ page.url | relative_url }}">{{ page.title }}</a>{% endif %}
 			{% endfor %}
 		</nav>
 		<main>
