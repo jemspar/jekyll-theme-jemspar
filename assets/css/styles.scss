@@ -87,6 +87,16 @@ main {
 	flex-direction: column;
 	align-items: end;
 	padding-right: 5%;
+
+	a {
+		color: $body;
+		text-decoration: none;
+		border-bottom: 1px solid $body;
+	}
+
+	img {
+		max-width: 100%;
+	}
 }
 
 h1 {
