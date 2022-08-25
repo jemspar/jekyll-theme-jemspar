@@ -5,6 +5,24 @@ $background: darkblue;
 $body: white;
 $accent1: black;
 
+// MIXINS
+
+@mixin lightness ($lightness: light) {
+
+  @if $lightness == light {
+    @media (prefers-color-scheme: light) {
+      @content;
+    }
+  }
+
+  @if $lightness == dark {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+}
+
+
 @font-face {
 	font-family: 'Josefin Sans';
 	src: url('/assets/fonts/josefin/JosefinSans-VariableFont_wght.ttf') format('truetype-variations');
@@ -27,8 +45,17 @@ body {
 	align-items: flex-start;
 	margin:0;
 	padding: 0;
-	background-color: $background;
-	color: $body;
+	//background-color: $background;
+	//color: $body;
+        @include lightness(light) {
+          background-color: white;
+          color: black;
+        }
+        @include lightness(dark) {
+          background-color: black;
+          color: white;
+        }
+
 }
 
 nav {
